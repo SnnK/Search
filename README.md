@@ -3,11 +3,4 @@
 With this tool you can simulate using Google Search from different locations.
 Allows you to see your website's Google ranking in different locations.
 
-You can try now.
-https://snnk.github.io/s/search.html
-
-Simple, fast, mobile friendly.
-
-## My Side Projects
-#learnathome
-[%100 off udemy course coupons](https://dailycouponlist.com/ "%100 off udemy course coupons")
+![search](https://user-images.githubusercontent.com/2975175/97146225-8af8af00-1778-11eb-9747-28ed8073779d.JPG)
