@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Search</title>
+    <meta name="description" content="With this tool you can simulate using Google Search from different locations. This tool allows you to see your ranking in Google search results for different locations." />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+    <h1>GOOGLE SEARCH</h1>
+    <div class="sections-menu">
+        <button data-id="s-1">Germany</button>
+        <button data-id="s-2">United States</button>
+        <button data-id="s-3">England</button>
+        <button data-id="s-4">Spain</button>
+        <button data-id="s-5">United Arab Emirates</button>
+        <button data-id="s-6">Japan</button>
+        <button data-id="s-7">Russia</button>
+    </div>
+    <div class="sections">
+        <div class="section" id="s-1">
+        <input id="germany" class="searchinput" placeholder="Germany" type="text">
+        <button data-url="https://www.google.de/search?q=(searchtext)&glp=1&adtest=on&hl=DE&tci=g:1003854&uule=w+CAIQICIVQmVybGluLEJlcmxpbixHZXJtYW55&safe=images&safe=high" data-input="germany">SEARCH</button><br><br>
+        </div>
+        
+        <div class="section" id="s-2">
+        <input id="unitedstates" class="searchinput" placeholder="United States" type="text">
+        <button data-url="https://www.google.com/search?q=(searchtext)&glp=1&adtest=on&hl=EN&tci=g:1023191&uule=w+CAIQICIfTmV3IFlvcmssTmV3IFlvcmssVW5pdGVkIFN0YXRlcw&safe=images&safe=high" data-input="unitedstates">SEARCH</button><br><br>
+        </div>
+        
+        <div class="section" id="s-3">
+        <input id="england" class="searchinput" placeholder="England" type="text">
+        <button data-url="https://www.google.com/search?q=(searchtext)&glp=1&adtest=on&hl=EN&tci=g:1006886&uule=w+CAIQICIdTG9uZG9uLEVuZ2xhbmQsVW5pdGVkIEtpbmdkb20&safe=images&safe=high" data-input="england">SEARCH</button><br><br>
+        </div>
+        
+        <div class="section" id="s-4">
+        <input id="spain" class="searchinput" placeholder="Spain" type="text">
+        <button data-url="https://www.google.es/search?q=(searchtext)&glp=1&adtest=on&hl=ES&tci=g:1005493&uule=w+CAIQICIgTWFkcmlkLENvbW11bml0eSBvZiBNYWRyaWQsU3BhaW4&safe=images&safe=high" data-input="spain">SEARCH</button><br><br>
+        </div>
+        
+        <div class="section" id="s-5">
+        <input id="unitedarabemirates" class="searchinput" placeholder="United Arab Emirates" type="text">
+        <button data-url="https://www.google.ae/search?q=(searchtext)&glp=1&adtest=on&hl=AR&tci=g:2784&uule=w+CAIQICIUVW5pdGVkIEFyYWIgRW1pcmF0ZXM&safe=images&safe=high" data-input="unitedarabemirates">SEARCH</button><br><br>
+        </div>
+        
+        <div class="section" id="s-6">
+        <input id="japan" class="searchinput" placeholder="Japan" type="text">
+        <button data-url="https://www.google.co.jp/search?q=(searchtext)&glp=1&adtest=on&hl=JA&tci=g:1009317&uule=w+CAIQICIcVG9reW8gLSAyMyB3YXJkcyxUb2t5byxKYXBhbg&safe=images&safe=high" data-input="japan">SEARCH</button><br><br>
+        </div>
+        
+        <div class="section" id="s-7">
+        <input id="russia" class="searchinput" placeholder="Russia" type="text">
+        <button data-url="https://www.google.ru/search?q=(searchtext)&glp=1&adtest=on&hl=RU&tci=g:2643&uule=w+CAIQICIGUnVzc2lh&safe=images&safe=high" data-input="russia">SEARCH</button><br><br>
+        </div>
+    </div>
+
+</div>
+</body>
+<style>
+.wrapper {
+    text-align: center;
+    margin-top:30px;
+}
+
+.searchinput{
+    display: block;
+    width: 350px;
+    padding: 11px 25px;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border-radius: 0.5rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    display:inline-block;
+    outline: none;
+    border:2px solid #000;
+}
+
+button{
+  background-color: #000;
+  border: none;
+  color: white;
+  padding: 10px 17px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.sections-menu button {
+    background-color:#757070;
+}
+
+.section{display:none;}
+.sections{margin-top:30px;}
+
+@media screen and (max-width:600px) {
+.searchinput{width:170px;}
+}   
+</style>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    $(".sections-menu button").click(function() {
+        var btn = $("#" + $(this).data("id"))
+        $('.section').hide();
+        btn.show()
+   });
+
+   $(".sections button").click(function() {
+        var inpt = $("#" + $(this).data("input"))
+        var url = $(this).data("url").replace("(searchtext)",inpt.val());
+        window.open(url);
+   });
+});
+</script>
+</html>
